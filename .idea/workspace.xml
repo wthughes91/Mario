@@ -223,7 +223,7 @@
     <property name="FullScreen" value="true" />
     <property name="recentsLimit" value="5" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SAVVIS Coding Challenge" />
   </component>
   <component name="RunManager" selected="Application.Mario">
     <configuration default="false" name="Mario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
