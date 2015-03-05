@@ -1,6 +1,6 @@
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
+import PrintLocations.ConsolePrint;
+import PrintLocations.TextFilePrint;
+
 import java.util.Scanner;
 
 public class Mario {
@@ -18,38 +18,16 @@ public class Mario {
         String answer = check.nextLine();
 
         if (answer.equals("yes") || answer.equals("y")) {
-            try {
-                File pyramid = new File("Mario.txt");
-                PrintWriter out = new PrintWriter(pyramid);
-                for (int i = 1; i <= height; i++) {
-                    for (int j = 1; j <= height - i; j++) {
-                        out.print(" ");
-                    }
-                    for (int k = 1; k <= i + 1; k++) {
-                        out.print("#");
-                    }
-                    out.print("\n");
-                }
-                out.close();
-            } catch (IOException exception) {
-                System.out.print("Unable to print");
-            }
-        }
+            TextFilePrint printLocation = new TextFilePrint();
+            printLocation.buildPyramid(height);
 
-        else if (answer.equals("no") || answer.equals("n")) {
-            for (int i = 1; i <= height; i++) {
-                for (int j = 1; j <= height - i; j++) {
-                    System.out.print(" ");
-                }
-                for (int k = 1; k <= i + 1; k++) {
-                    System.out.print("#");
-                }
-                System.out.print("\n");
-            }
-        }
+        } else if (answer.equals("no") || answer.equals("n")) {
+            ConsolePrint printLocation = new ConsolePrint();
+            printLocation.buildPyramid(height);
 
-        else {
+        } else {
             System.out.print("Unable to print");
-        }
+            }
+
     }
 }
