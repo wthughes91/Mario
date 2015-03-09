@@ -1,6 +1,3 @@
-import PrintLocations.ConsolePrint;
-import PrintLocations.TextFilePrint;
-
 import java.util.Scanner;
 
 public class Mario {
@@ -18,12 +15,10 @@ public class Mario {
         String answer = check.nextLine();
 
         if (answer.equals("yes") || answer.equals("y")) {
-            TextFilePrint printLocation = new TextFilePrint();
-            printLocation.buildPyramid(height);
+            PyramidFactory.TextFilePyramid(height);
 
         } else if (answer.equals("no") || answer.equals("n")) {
-            ConsolePrint printLocation = new ConsolePrint();
-            printLocation.buildPyramid(height);
+            PyramidFactory.ConsolePyramid(height);
 
         } else {
             System.out.print("Unable to print");
