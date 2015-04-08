@@ -15,14 +15,13 @@ public class Mario {
         String answer = check.nextLine();
 
         if (answer.equals("yes") || answer.equals("y")) {
-            PyramidFactory.TextFilePyramid(height);
+            PyramidFactory.printPyramid().TextFilePyramid(height);
 
         } else if (answer.equals("no") || answer.equals("n")) {
-            PyramidFactory.ConsolePyramid(height);
+            PyramidFactory.printPyramid().ConsolePyramid(height);
 
         } else {
             System.out.print("Unable to print");
             }
-
     }
 }

@@ -4,12 +4,23 @@ import java.io.PrintWriter;
 
 public class PyramidFactory {
 
-    public static void ConsolePyramid(int height) {
+    private PyramidFactory() {}
+
+    private static PyramidFactory pyramidPrinter;
+
+    public static PyramidFactory printPyramid() {
+        if(pyramidPrinter == null) {
+            pyramidPrinter = new PyramidFactory();
+        }
+        return pyramidPrinter;
+    }
+
+    public void ConsolePyramid(int height) {
         StringBuilder sb = Pyramid.GetPyramid(height);
         System.out.print(sb);
     }
 
-    public static void TextFilePyramid(int height) {
+    public void TextFilePyramid(int height) {
         StringBuilder sb = Pyramid.GetPyramid(height);
         try {
             File pyramidFile = new File("Mario.txt");
